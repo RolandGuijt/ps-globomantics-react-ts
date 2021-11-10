@@ -1,13 +1,11 @@
+import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import House from ".";
-import { HouseType } from "../types/house";
+import HousesContext from "../contexts/housesContext";
 
-type Args = {
-  allHouses: HouseType[];
-};
-
-const HouseFromQuery = ({ allHouses }: Args) => {
+const HouseFromQuery = () => {
   const { id } = useParams();
+  const allHouses = useContext(HousesContext);
   if (!id) return <div>House id not found.</div>;
   const house = allHouses.find((h) => h.id === parseInt(id));
 
