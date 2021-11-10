@@ -6,12 +6,9 @@ type Args = {
   allHouses: HouseType[];
 };
 
-type Params = {
-  id: string;
-};
-
 const HouseFromQuery = ({ allHouses }: Args) => {
-  const { id } = useParams<Params>();
+  const { id } = useParams();
+  if (!id) return <div>House id not found.</div>;
   const house = allHouses.find((h) => h.id === parseInt(id));
 
   if (!house) return <div>House not found.</div>;
