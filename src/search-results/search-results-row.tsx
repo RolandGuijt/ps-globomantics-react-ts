@@ -1,4 +1,4 @@
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { HouseType } from "../types/house";
 import "./search-results.css";
 
@@ -7,10 +7,10 @@ type Args = {
 };
 
 const SearchResultsRow = ({ house }: Args) => {
-  const history = useHistory();
+  const nav = useNavigate();
 
   const setActive = () => {
-    history.push(`/house/${house.id}`);
+    nav(`/house/${house.id}`);
   };
 
   return (

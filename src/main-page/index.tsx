@@ -5,7 +5,7 @@ import FeaturedHouse from "./featured-house";
 import HouseFilter from "./house-filter";
 import SearchResults from "../search-results";
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HouseFromQuery from "../house/HouseFromQuery";
 import { HouseType } from "../types/house";
 
@@ -34,7 +34,7 @@ function App() {
         <Header subtitle="Providing houses all over the world" />
         <HouseFilter allHouses={allHouses} />
 
-        <Switch>
+        <Routes>
           <Route path="/searchresults/:country">
             <SearchResults allHouses={allHouses} />
           </Route>
@@ -46,7 +46,7 @@ function App() {
           <Route path="/">
             <FeaturedHouse house={featuredHouse} />
           </Route>
-        </Switch>
+        </Routes>
       </div>
     </Router>
   );

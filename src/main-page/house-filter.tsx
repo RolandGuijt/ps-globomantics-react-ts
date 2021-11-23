@@ -1,5 +1,5 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { HouseType } from "../types/house";
 
 type Args = {
@@ -7,7 +7,7 @@ type Args = {
 };
 
 const HouseFilter = ({ allHouses }: Args) => {
-  const history = useHistory();
+  const nav = useNavigate();
 
   const countries: string[] = allHouses
     ? Array.from(new Set(allHouses.map((h: HouseType) => h.country)))
@@ -16,7 +16,7 @@ const HouseFilter = ({ allHouses }: Args) => {
 
   const onSearchChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const country = e.target.value;
-    history.push(`/searchresults/${country}`);
+    nav(`/searchresults/${country}`);
   };
 
   return (
