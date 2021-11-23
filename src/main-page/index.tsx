@@ -35,17 +35,20 @@ function App() {
         <HouseFilter allHouses={allHouses} />
 
         <Routes>
-          <Route path="/searchresults/:country">
-            <SearchResults allHouses={allHouses} />
-          </Route>
+          <Route
+            path="/searchresults/:country"
+            element={<SearchResults allHouses={allHouses} />}
+          ></Route>
 
-          <Route path="/house/:id">
-            <HouseFromQuery allHouses={allHouses} />
-          </Route>
+          <Route
+            path="/house/:id"
+            element={<HouseFromQuery allHouses={allHouses} />}
+          ></Route>
 
-          <Route path="/">
-            <FeaturedHouse house={featuredHouse} />
-          </Route>
+          <Route
+            path="/"
+            element={<FeaturedHouse house={featuredHouse} />}
+          ></Route>
         </Routes>
       </div>
     </Router>

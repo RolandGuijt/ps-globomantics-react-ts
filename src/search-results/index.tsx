@@ -6,12 +6,8 @@ type Args = {
   allHouses: HouseType[];
 };
 
-type Params = {
-  country: string;
-};
-
 const SearchResults = ({ allHouses }: Args) => {
-  const { country } = useParams<Params>();
+  const { country } = useParams();
   const filteredHouses = allHouses.filter((h) => h.country === country);
 
   return (
