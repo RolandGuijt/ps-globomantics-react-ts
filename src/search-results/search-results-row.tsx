@@ -18,6 +18,9 @@ const SearchResultsRow = ({ house }: Args) => {
       <td>{house.address}</td>
       <td>{house.country}</td>
       <td>{house.price}</td>
+      <td>
+        <button className="btn btn-primary">Edit</button>
+      </td>
     </tr>
   );
 };

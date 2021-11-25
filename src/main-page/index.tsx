@@ -20,7 +20,7 @@ function App() {
       <HousesContext.Provider value={allHouses}>
         <div className="container">
           <Header subtitle="Providing houses all over the world" />
-          <HouseFilter allHouses={allHouses} />
+          <HouseFilter />
 
           <Routes>
             <Route
